@@ -1,4 +1,4 @@
-# Individual Contributions — Group 75
+# Individual Contributions - Group 75
 
 Each member is assessed only on the work they demonstrate and can explain.
 This maps each member to their component, files and git commits.
