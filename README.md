@@ -1,4 +1,4 @@
-# Operation Rogue Insider: The Vault Breach — CTF Play Box
+# Operation Rogue Insider: The Vault Breach - CTF Play Box
 
 **Group 75** · IE3132 Penetration Testing — Assignment 02
 Index numbers: IT24103385 · IT24103019 · IT24103020 · IT24102889
@@ -12,8 +12,8 @@ domains plus a reverse-engineering capstone. All flags use the format
 ## 1. Requirements
 
 - A host (or VM) with ~4–6 vCPU, 6–8 GB RAM, 15–20 GB disk.
-- **Docker Engine + Docker Compose plugin** (`docker --version`, `docker compose version`).
-- For the isolated demo: an **Ubuntu Server 22.04 VM on a host-only adapter**
+- Docker Engine + Docker Compose plugin (`docker --version`, `docker compose version`).
+- For the isolated demo: an Ubuntu Server 22.04 VM on a host-only adapter
   (no internet route). The box needs no internet access at run time.
 
 ## 2. Repository layout
@@ -45,7 +45,7 @@ From the `platform/` folder:
 
 This builds and starts the challenge containers and CTFd.
 
-> **Docker Desktop (macOS / Windows):** the `internal: true` network blocks
+> Docker Desktop (macOS / Windows): the `internal: true` network blocks
 > published ports on Docker Desktop (a Docker Desktop VM limitation). To reach
 > the services locally, bring the box up with the override instead:
 >
@@ -54,15 +54,15 @@ This builds and starts the challenge containers and CTFd.
 > docker start ctfd
 > ```
 >
-> On the host-only **Linux VM**, `deploy.sh` publishes the ports *and* keeps
+> On the host-only Linux VM, `deploy.sh` publishes the ports and keeps
 > egress blocked at the same time — use that for the graded run.
 
 ## 4. CTFd first-time setup
 
 1. Open `http://<host-ip>:8000` and complete the setup wizard (create the admin
    account; name the event "Operation Rogue Insider").
-2. Either **Import** the config export at `platform/ctfd-export.zip`
-   (Admin → Config → Backup → Import), **or** register the 6 challenges by hand
+2. Either Import the config export at `platform/ctfd-export.zip`
+   (Admin → Config → Backup → Import), or register the 6 challenges by hand
    as static, case-sensitive flags with the two hints each.
 3. Attach the downloadable file to challenges 1, 2, 3 and 6.
 
