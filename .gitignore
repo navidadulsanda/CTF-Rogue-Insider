@@ -1,7 +1,25 @@
-
+# OS
 .DS_Store
 **/.DS_Store
+Thumbs.db
 
-.DS_Store
-**/.DS_Store
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Node
+node_modules/
+
+# CTFd source — we use the ctfd/ctfd image, not its source
 platform/CTFd/
+**/CTFd/
+
+# Solver extraction output — not part of the box
+**/vault_decryptor_extracted/
+
+# scratch
+*.log
+hash.txt
+.env
