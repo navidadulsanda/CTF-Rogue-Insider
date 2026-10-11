@@ -1,4 +1,4 @@
-# Security & Isolation — Operation Rogue Insider (Group 75)
+# Security & Isolation - Operation Rogue Insider (Group 75)
 
 ## 1. Scope & authorised use
 This CTF Play Box is built so it cannot affect institutional or public systems.
