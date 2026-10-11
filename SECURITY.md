@@ -2,11 +2,11 @@
 
 ## 1. Scope & authorised use
 This CTF Play Box is built so it cannot affect institutional or public systems.
-Every target is an **intentionally vulnerable asset created by the group for this
-CTF** (the avatar image, the packet capture, the Flask app, the Dockerfiles and
+Every target is an intentionally vulnerable asset created by the group for this
+CTF (the avatar image, the packet capture, the Flask app, the Dockerfiles and
 seeded data). No real, third-party or institutional system is involved. Public
-datasets/tools (e.g. the rockyou.txt wordlist) are used **only against our own
-challenge data**, and are acknowledged in the README.
+datasets/tools (e.g. the rockyou.txt wordlist) are used only against our own
+challenge data, and are acknowledged in the README.
 
 ## 2. Threat model
 The main risk is a participant who solves a challenge (e.g. gains a shell in
@@ -26,13 +26,13 @@ host. The controls below prevent that.
    `8000` (CTFd), `5000` (Stage 4), `2222` (Stage 5).
 
 ## 4. Flag validation mechanism
-Flags are registered in CTFd as **static, case-sensitive** values in the format
+Flags are registered in CTFd as static, case-sensitive values in the format
 `ROGUE{...}`. A correct submission is marked solved; an incorrect one is
 rejected. All submissions are logged under Admin → Submissions.
 
 ## 5. Reset / recovery
 `platform/reset.sh` rebuilds and re-seeds Stage 4 and recreates Stage 5; the
-static stages (1, 2, 3, 6) are stateless. CTFd runs in a **separate container**
+static stages (1, 2, 3, 6) are stateless. CTFd runs in a separate container
 that the reset does not touch, so scoreboard data survives a reset.
 
 ## 6. Verifying the controls (run on the host-only Linux VM)
@@ -56,6 +56,6 @@ sudo ss -tlnp | grep -E '8000|5000|2222'
 ## 7. Docker Desktop note
 On Docker Desktop (macOS/Windows) `internal: true` and published ports cannot
 coexist — a Docker Desktop VM limitation, not a configuration error — so the
-graded isolation proof is performed on the **host-only Linux VM**, where the
+graded isolation proof is performed on the host-only Linux VM, where the
 ports publish *and* egress stays blocked. The `docker-compose.mac.yml` override
-(which sets `internal: false`) is for **local testing only** on Docker Desktop.
+(which sets `internal: false`) is for local testing only on Docker Desktop.
