@@ -1,0 +1,13 @@
+cd /opt/backup
+ls -la
+./backup_runner.sh --full
+systemctl status aegis-backup
+tar -czf /srv/exports/nightly.tar.gz /data/vault
+scp /srv/exports/nightly.tar.gz backupsvc@10.10.50.15:/incoming/
+vim notes.txt
+cat /etc/aegis/backup.conf
+# reminder: service account password hash (md5) stored below for recovery
+echo "5fcfd41e547a12215b173ff47fdd3739" >> /root/.recovery_hash
+mysql -u aegis -p aegis_db
+history -c
+exit

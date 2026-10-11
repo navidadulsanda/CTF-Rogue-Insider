@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # Stage 1 solver - Steganography
-# Reads the hidden Base64 note from the image's EXIF Comment and decodes it.
+# The EXIF Comment holds a backup note ending in a Base64 credential.
+# Grab the last whitespace-separated token (the Base64 part) and decode it.
 # Usage: ./stage1_steg.sh [avatar.jpg]
 IMG="${1:-avatar.jpg}"
-exiftool -b -Comment "$IMG" | base64 -d
+exiftool -b -Comment "$IMG" | awk '{print $NF}' | base64 -d
 echo
-# -> ROGUE{Backup123!}
+# -> Backup123!   => ROGUE{Backup123!}
