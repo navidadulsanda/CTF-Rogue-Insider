@@ -1,0 +1,18 @@
+services:
+  stage4_web:
+    build: ../stages/stage4
+    ports:
+      - "5000:5000"         # or "5001:5000" if AirPlay still holds 5000
+    cap_drop: [ALL]
+    networks: [ctf_internal]
+
+  stage5_ssh:
+    build: ../stages/stage5
+    ports:
+      - "2222:22"
+    networks: [ctf_internal]
+
+networks:
+  ctf_internal:
+    driver: bridge
+    internal: true 
